@@ -1,144 +1,68 @@
 <!DOCTYPE html>
-<title> Be Human </title>
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Be Human </title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 
-<style>
-    @font-face {
-        font-family: Charlotte;
-        src: url('Charlotte.otf') format('OpenType');
-    }
-    body{
-        font-family: Charlotte;
-        font-weight: 700;
-        font-size: 4rem;
-    }
-    h1{
-        font-family: Charlotte;
-        font-weight: 700;
-        font-size: 2rem;
-    }
-    object{
-        font-family: Charlotte;
-    }
 
-</style>
+<body>
+<h1 class="big-title">Be Human</h1>
+<hr width="60%" size="2" color="black"  noshade>
 
-<!--Rules-->
-<center>
-<body style="background-color: rgb(147, 231, 246);">
-        Be Human<br>
+<section class="Fr_Part">
+    <!--Affichage du texte FR-->
+    <object id = "TextFR"  type="text/html"></object>
+</section>
+
+<section class="Inter">
+    <!--Affichage Image Inter Texte-->
+    <img src="infinity1.png" alt="Trulli" width="200" height="100">
+</section>
+
+<section class="En_Part">
+    <!--Affichage du texte EN-->
+    <object id = "TextEN"  type="text/html" ></object>
+</section>
+
+<hr width="60%" size="2" color="black"  noshade>
+<section class="Choose_Date">
+    <!--Affichage Date -->
+        <!--<object id = "DateDemand"  > </object>-->
+        <p id="DateDemand"></p>
+        <!--Changement de la date avec un bouton-->
+        <input type="date" id="NewDate" name="NewDate">
+        <br>
+        <button id = "test" onclick = "ChangeData()"> New Date </button>
+</section>
+
+<section class="ending-page">
+    <footer>
+        <p class="copyright">&copy; 2025 - 
+        Be Human <br>Last Update 16/02/2025 </p>
+        <div class="footer-link">
+            <a href="https://www.linkedin.com/in/r%C3%A9mi-schuller?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+             <img src="Picture/Linkedin_Logo.png" style="width: 40px;"/></a>
+
+            <a href="https://github.com/Eliefou" target="_blank">
+             <img src="Picture/GitHub-Logo.png" style="width: 70px;"/></a>
+
+            <a href="mailto:remi.schuller@outlook.fr"> <img src="Picture/Logo_Mail.png" style="width: 40px;"/> </a>
+
+            <a href="historic.html" target="_self">
+                <img src="Picture/historic.png" style="width: 40px;"/></a>
+        </div>
+        
+        
+        <a href="" class="cgu"> Conditions Générales d'Utilisation</a>
+    </footer>
+
+</section>
+
+<script type="text/javascript" src="Java/script.js"></script>
+
 </body>
 
-
-<!--Rechercher la date du jour -->
-
- <SCRIPT LANGUAGE="JavaScript">
-    var maintenant=new Date();
-    var jour=maintenant.getDate();
-    var mois=maintenant.getMonth()+1;
-    var an=maintenant.getFullYear();
-    </SCRIPT>
-
- 
-</script> 
-
-<!--Affichage du texte FR-->
-<object id = "TextFR"  type="text/html"></object>
-<br>
-
-<!--Affichage Image Inter Texte-->
-<img src="infinity1.png" alt="Trulli" width="200" height="100">
-<br>
-
-<!--Affichage du texte EN-->
-<object id = "TextEN"  type="text/html" ></object>
-<br>
-<!--Affichage Date -->
-<h1>
-    <!--<object id = "DateDemand"  > </object>-->
-    <p id="DateDemand"></p>
-
-    <!--Changement de la date avec un bouton-->
-    <input type="date" id="NewDate" name="NewDate">
-    <br>
-    <button id = "test" onclick = "ChangeData()"> New Date </button>
-</h1>
-<!--Code pour Update le texte -->
-<script type="text/javascript">
-
-    var initialDateValue=DateValue(jour,mois,an);
-    
-    var elementFR = document.getElementById("TextFR"); 
-    elementFR.setAttribute("data", "FrTexteFolder/"+String(initialDateValue)+'.txt');
-
-    var elementEN = document.getElementById("TextEN"); 
-    elementEN.setAttribute("data", "EnTexteFolder/"+String(initialDateValue)+'.txt');
-
-    var elementDate= document.getElementById("DateDemand"); 
-    elementDate.textContent= "Current Date is : "+String(jour)+ "/"+String(mois)+"/"+String(an);
-
-    var NewDate= document.getElementById("NewDate");
-    var input = document.getElementById( 'NewDate' ).value;
-    var d = new Date( NewDate );
-
-    var newdatevar= new Date(document.getElementById('NewDate').value);
-    var newday= newdatevar.getDate();
-    var newmonth= newdatevar.getMonth()+1;
-    var newyear=newdatevar.getFullYear();
-
-    //Fonction bissextile
-    function IsBissextile(YearParam){
-        if ((YearParam%100)==0)
-        {
-            if ((YearParam%400)==0){return true;}
-            else {return false;}
-        }
-        else {
-            if ((YearParam%4)==0){return true;}
-            else {return false;}
-        }
-    }
-
-    function DateValue(DateParam,MonthParam,YearParam){
-        var valueofdate=DateParam;
-
-        let Tab_bissex = [0,0,31,60,91,121,152,182,213,244,274,305,335];
-
-        valueofdate=valueofdate+Tab_bissex[MonthParam];
-
-        return valueofdate;
-    }
-
-    
-    function ChangeData(){
-        //MAJ Date
-        newdatevar= new Date(document.getElementById('NewDate').value);
-        newday= newdatevar.getDate();
-        newmonth= newdatevar.getMonth()+1;
-        newyear=newdatevar.getFullYear();
-
-        if ((String(newday)=="NaN")||(String(newmonth)=="NaN")||(String(newyear)=="NaN") )
-        {
-            elementDate.textContent= "Current Date is Unvalid";
-            return 0;
-        }
-
-        newdatevar= newday+'/'+newmonth+'/'+newyear;
-        elementDate.textContent= "Current Date is : "+ String(newdatevar);
-        var newdatevalue= DateValue(newday,newmonth,newyear);
-        //elementDate.textContent= "New date value is : "+ String(newdatevalue);
-
-        //MAJ Texte FR
-        elementFR.setAttribute("data", "FrTexteFolder/"+String(newdatevalue)+'.txt');
-
-        //MAJ Texte EN
-        elementEN.setAttribute("data", "EnTexteFolder/"+String(newdatevalue)+'.txt');
-
-    }
-     
-  </script>
-
-
-
-
-</center>
+</html>

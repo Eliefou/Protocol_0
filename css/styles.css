@@ -1,0 +1,64 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "Charlotte";
+        src: url('CHARLOTTE.otf') format('OpenType');
+}
+
+body{
+    margin: 0 auto;
+    /* background-color: gray; */
+    background-size: cover;
+    height: 50vh;
+    width: 100%;
+    box-sizing: 5px;
+    /* font-family: "Charlotte"; */
+    font-weight: 700;
+    font-size: 4rem;
+    background-color: rgb(147, 231, 246);
+    text-align: center;
+    font-family: "Charlotte";
+}
+
+
+.big-title {
+    font-weight: 700;
+    font-size: 4rem;
+    color: black;
+
+    text-align: center;
+}
+
+
+.Choose_Date{
+    font-weight: 700;
+    font-size: 2rem;
+}
+/* Pied de page */
+
+.ending-page {
+    margin-top: 2%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 5% 5%; */
+    font-size: 30%;
+    background: rgb(188, 184, 184);
+    background-size: 100%;
+}
+
+footer a.cgu{
+    text-decoration: none;
+    color: black;
+    margin-right: 2%;
+}
+
+footer p.copyright{
+    margin-left: 2%;
+}
