@@ -5,7 +5,7 @@ html {
 
 @font-face {
     font-family: "Charlotte";
-        src: url('CHARLOTTE.otf') format('OpenType');
+        src: url('./CHARLOTTE.otf') format('OpenType');
 }
 
 body{
