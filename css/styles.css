@@ -8,6 +8,7 @@ html {
         src: url('/Charlotte.otf') format('OpenType');
         src: url('/charlotte.regular.ttf') format('truetype');
         src: url('https://github.com/Eliefou/Protocol_0/blob/main/Charlotte.otf') format('OpenType');
+        src: url('https://github.com/Eliefou/Protocol_0/main/Charlotte.otf') format('OpenType');
 /* src: url('css/Charlotte.otf') format('OpenType'); */
 /*     css/styles.css */
 }
